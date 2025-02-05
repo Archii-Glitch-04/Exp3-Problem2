@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        #message {
+            color: blue;
+        }
+        #image {
+            width: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+            
+    
+    </style>
+</head>
+<body>
+    <h1 id="title">Welcome to My Dynamic Page</h1>
+
+    <p id="message">This is a paragraph that can be updated.</p>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeImage()">Change Image</button>
+    <button onclick="addTextNode()">Add Text Node</button>
+    <button onclick="removeNode()">Remove Paragraph</button>
+
+    <img id="image" src="C:/Users/Archana/Downloads/Variable.SG/books.jpg" alt="Placeholder Image">
+
+    <div id="container">
+        <!-- Dynamic content will be added here -->
+    </div>
+
+    <script>
+        // Change text content of the paragraph
+        function changeText() {
+            document.getElementById('message').innerHTML = "The text has been changed!";
+            document.getElementById('message').style.color = "red"; // Change text color
+        }
+
+        // Change the image source
+        function changeImage() {
+            document.getElementById('image').src = "C:/Users/Archana/Downloads/Variable.SG/Students.jpg";
+        }
+
+        // Add a text node to the container
+        function addTextNode() {
+            var textNode = document.createTextNode("This is a new text node!");
+            document.getElementById('container').appendChild(textNode);
+        }
+
+        // Remove the paragraph element
+        function removeNode() {
+            var para = document.getElementById('message');
+            para.parentNode.removeChild(para);
+        }
+    </script>
+</body>
+</html>
