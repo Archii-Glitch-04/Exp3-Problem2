@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Dynamic Page</title>
+    <style>
+        #message {
+            color: green;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 id="title">Welcome to My jQuery Page</h1>
+
+    <p id="message">This is a paragraph that will change dynamically.</p>
+
+    <button id="btnChangeText">Click to Change Text</button>
+    <button id="btnChangeBg">Change Background Image</button>
+
+    <form id="dataForm">
+        <input type="text" id="userName" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <img id="image" src="C:\Users\Archana\Downloads\Variable.SG\books.jpg" alt="Placeholder Image">
+
+    <script>
+        // Change button text using jQuery
+        $('#btnChangeText').click(function() {
+            $('#message').text('The text has been updated using jQuery!');
+            $('#message').css('color', 'orange'); // Change text color
+        });
+
+        // Change background image using jQuery
+        $('#btnChangeBg').click(function() {
+            $('body').css('background-image', 'url("C:\Users\Archana\Downloads\Variable.SG\books.jpg/600x400")');
+        });
+
+        // Access form data using jQuery
+        $('#dataForm').submit(function(event) {
+            event.preventDefault();
+            var name = $('#userName').val();
+            alert('Hello, ' + name);
+        });
+
+        // Add attribute using jQuery
+        $('#image').attr('title', 'Image Title');
+    </script>
+</body>
+</html>
